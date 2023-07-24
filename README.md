@@ -1,2 +1,2 @@
 # Jefit
-|**Profile (My Jefit) |
+|**Profile (My Jefit)** |
