@@ -1,2 +1,7 @@
 # Jefit
-|**Profile (My Jefit)** |
+|Profile My Jefit |
+|-----------------|
+| First Header  |
+| ------------- | 
+| Content Cell  | 
+| Content Cell  |
