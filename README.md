@@ -1,4 +1,5 @@
 # Jefit
+
 | ***Enabling account*** |
 |1. Apply metric settings|
 |***Profile (My Jefit)*** | What to do |
