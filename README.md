@@ -8,7 +8,7 @@
 |***Settings***|
 |2 |Открытие страницы Settings|
 |2.1 |Редактирование Profile/app|
-|2.2 |Открытиестраницы Email/Password|
+|2.2 |Открытие страницы Email/Password|
 |2.3 |Открытие страницы Membership Settings|
 |2.4 |Изменение параметра Manage your Notificatios на странице Notification/Privacy|
 |2.5 |Изменение параметра Manage your Privacy на странице Notification/Privacy|
