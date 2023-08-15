@@ -53,7 +53,7 @@ public class BaseTest {
             listOfFiles =  folder.listFiles();
             Thread.sleep(100);
             wait-=100;
-            if ((listOfFiles.length !=0 && listOfFiles.[0].getName().equals(nameDownloadedFile)){
+            if ((listOfFiles.length !=0 && listOfFiles[0].getName().equals(nameDownloadedFile))){
                 fileIsNotReady = false;
             }
         }
