@@ -4,7 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class CheckBox {
-    String CheckBoLocator = "";
+    String checkBoLocator = "";
     WebDriver driver;
     String variable;
 
@@ -14,5 +14,5 @@ public class CheckBox {
 
     }
     public void select(){
-        driver.findElement(By.xpath(String.format(CheckBoLocator, this.variable))).click();
+        driver.findElement(By.xpath(String.format(checkBoLocator, this.variable))).click();
     }}

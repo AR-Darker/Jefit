@@ -4,13 +4,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class RadioButton {
-    String RadioLocator = "";
+    String radioLocator = "";
     WebDriver driver;
-    String Gender;
-    public RadioButton(WebDriver driver, String Gender) {
+    String gender;
+    public RadioButton(WebDriver driver, String gender) {
         this.driver = driver;
-        this.Gender = Gender;
+        this.gender = gender;
     }
     public void selectGender(){
-        driver.findElement(By.xpath(String.format(RadioLocator, this.Gender))).click();
+        driver.findElement(By.xpath(String.format(radioLocator, this.gender))).click();
     }}
