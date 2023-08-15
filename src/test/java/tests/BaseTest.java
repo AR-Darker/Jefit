@@ -65,29 +65,7 @@ public class BaseTest {
 
 
     }
-    public void workWithAlert(){
-        Alert alert1 = new Alert() {
-            @Override
-            public void dismiss() {
 
-            }
-
-            @Override
-            public void accept() {
-
-            }
-
-            @Override
-            public String getText() {
-                return null;
-            }
-
-            @Override
-            public void sendKeys(String s) {
-
-            }
-        };
-    }
     @AfterMethod(alwaysRun = true)
     public void tearDown() {
 
