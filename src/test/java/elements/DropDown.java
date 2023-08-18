@@ -21,7 +21,7 @@ public class DropDown {
         driver.findElement(By.xpath(String.format(dropDownLocator, this.label))).click();
         log.info("Click on DropDown with label" + this.label);
         driver.findElement(By.xpath(String.format(optionLocator, option))).click();
-        log.info("Select Option" + this.option);
+        log.info("Select Option" + option);
 
 
 

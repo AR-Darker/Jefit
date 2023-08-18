@@ -1,25 +1,41 @@
 package tests;
 
-
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static org.openqa.selenium.support.ui.ExpectedConditions.alertIsPresent;
+import static org.testng.Assert.assertTrue;
+import static org.testng.AssertJUnit.assertEquals;
 
 
 public class LoginTest extends BaseTest {
-    WebDriverWait wait;
 
-    @Test
-    public void loginWithWalidData(){
-        //Alert alert2 = wait.until(alertIsPresent());
-        //Alert alert1 = driver.switchTo().alert();
-        //alert1.accept();
-
-
-
+    @DataProvider(name = "incorrectLoginTest")
+    public Object[][] incorrectLoginTest() {
+        return new Object[][]{
+                {"wrongmail", "wrongpass", "Invalid username/email or password"},
+                {"", "", "Invalid username/email or password"},
+                {"wrongmail", "", "Invalid username/email or password"},
+                {"", "wrongpass", "Invalid username/email or password"},
+        };
     }
+
+    @Test(description = "Log in with valid data")
+    public void loginTest() {
+        loginPage.open();
+        loginPage.login();
+        profileHomePage.isPageOpen();
+        assertTrue(profileHomePage.isPageOpen(), "Page hasn't opened");
+    }
+
+    @Test(dataProvider = "incorrectLoginTest", description = "Attempting to log in using incorrect data")
+    public void negativeLoginTest(String login, String password, String errorMessage) {
+        loginPage
+                .open()
+                .loginWithsWrongData(login, password)
+                .isPageOpen();
+
+        assertEquals(loginPage.getErrorMessage(), errorMessage, "The text doesn't match");
+    }
+
 
 }

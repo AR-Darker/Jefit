@@ -12,6 +12,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pages.LoginPage;
+import pages.ProfileHomePage;
 
 import java.io.File;
 import java.io.IOException;
@@ -27,6 +28,7 @@ public class BaseTest {
     int wait = 15000;
     boolean fileIsNotReady = true;
     public LoginPage loginPage;
+    public ProfileHomePage profileHomePage;
     @BeforeMethod
     public void setUp(ITestContext context){
         WebDriverManager.chromedriver().setup();
@@ -44,6 +46,7 @@ public class BaseTest {
 
 //todo (не забудь инициализировать страницы)
         loginPage = new LoginPage(driver);
+        profileHomePage = new ProfileHomePage(driver);
 }
     public void downloader(String fileLocator, String nameDownloadedFile) throws IOException, InterruptedException {
         WebElement ourFile = driver.findElement(By.xpath(fileLocator));
