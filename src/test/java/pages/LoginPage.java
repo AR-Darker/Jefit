@@ -30,7 +30,6 @@ public class LoginPage extends BasePage{
             new Input(driver, "vb_login_password").write(password);
             new Button(driver, "Log in").click();
             log.info("Valid login and password enter and login button click");
-
         }
 
         @Step("Log in with wrong email or password")

@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -23,7 +24,7 @@ import static org.testng.Assert.assertEquals;
 
 public class BaseTest {
     WebDriver driver;
-    String pathToDownload = System.getProperty("user.dir") + "";
+    public static String downloadPath = System.getProperty("user.dir") + "\\src\\test\\resources\\filesForDownload";
     String nameDownloadedFile;
     int wait = 15000;
     boolean fileIsNotReady = true;
@@ -31,15 +32,18 @@ public class BaseTest {
     public ProfileHomePage profileHomePage;
     @BeforeMethod
     public void setUp(ITestContext context){
-        WebDriverManager.chromedriver().setup();
         /////////
+        //todo У тебя работа с браузеро файрфокс, проверяй для гугла потиху
+        WebDriverManager.firefoxdriver().setup();
+        HashMap<String, Object> firefoxPrefs = new HashMap<String, Object>();
+        firefoxPrefs.put("profile.default_content_settings.popups", 0);
+        firefoxPrefs.put("download.prompt_for_download", "false");
+        firefoxPrefs.put("download.default_directory", downloadPath);
         ChromeOptions options = new ChromeOptions();
-        HashMap<String,Object> chromePrefs = new HashMap<>();
-        chromePrefs.put("profile.default_content_settings.popups", 0);
-        chromePrefs.put("download.default_directory", pathToDownload);
-        options.setExperimentalOption("prefs",chromePrefs);
+        options.setExperimentalOption("prefs", firefoxPrefs);
+        options.addArguments("--window-size=1920,1080");
         ///////
-        driver = new ChromeDriver();
+        driver = new FirefoxDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);
@@ -50,8 +54,8 @@ public class BaseTest {
 }
     public void downloader(String fileLocator, String nameDownloadedFile) throws IOException, InterruptedException {
         WebElement ourFile = driver.findElement(By.xpath(fileLocator));
-        FileUtils.cleanDirectory(new File(pathToDownload));
-        File folder = new File(pathToDownload);
+        FileUtils.cleanDirectory(new File(downloadPath));
+        File folder = new File(downloadPath);
         File[] listOfFiles = folder.listFiles();
 
         ourFile.click();
