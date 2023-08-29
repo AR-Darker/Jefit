@@ -39,7 +39,7 @@ public class BaseTest {
     public UserPage userPage;
     @BeforeMethod
     public void setUp(ITestContext context){
-        Configuration.baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
+        //Configuration.baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
         /////////
         //todo У тебя работа с браузеро файрфокс, проверяй для гугла потиху
         WebDriverManager.firefoxdriver().setup();
