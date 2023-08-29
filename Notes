@@ -4,7 +4,7 @@ Resently found bugs
 2.Кнопка Create Custom exersise - не Enabled
 //////////
 !загрузка файла!
-File file = new File("src/test/resources/qa-2-min (1).png");
+File file = new File("src/test/resources/картинка.png");
 driver.findElement(SELECT_FILE_BUTTON).sendKeys(file.getAbsolutePath());
 ////////
 <?xml version="1.0" encoding="UTF-8"?>
