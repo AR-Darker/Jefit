@@ -12,11 +12,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import pages.AboutMePage;
 import pages.LoginPage;
 import pages.ProfileHomePage;
+import pages.UserPage;
+import utils.PropertyReader;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.module.Configuration;
 import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
@@ -24,14 +28,18 @@ import static org.testng.Assert.assertEquals;
 
 public class BaseTest {
     WebDriver driver;
-    public static String downloadPath = System.getProperty("user.dir") + "\\src\\test\\resources\\filesForDownload";
+    public static String downloadPath = System.getProperty("user.dir") + "\\src\\test\\resources\\filesForUploading";
     String nameDownloadedFile;
+    String baseUrl;
     int wait = 15000;
     boolean fileIsNotReady = true;
     public LoginPage loginPage;
     public ProfileHomePage profileHomePage;
+    public AboutMePage aboutMePage;
+    public UserPage userPage;
     @BeforeMethod
     public void setUp(ITestContext context){
+        Configuration.baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
         /////////
         //todo У тебя работа с браузеро файрфокс, проверяй для гугла потиху
         WebDriverManager.firefoxdriver().setup();
@@ -51,6 +59,8 @@ public class BaseTest {
 //todo (не забудь инициализировать страницы)
         loginPage = new LoginPage(driver);
         profileHomePage = new ProfileHomePage(driver);
+        aboutMePage = new AboutMePage(driver);
+        userPage = new UserPage(driver);
 }
     public void downloader(String fileLocator, String nameDownloadedFile) throws IOException, InterruptedException {
         WebElement ourFile = driver.findElement(By.xpath(fileLocator));
