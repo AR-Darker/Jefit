@@ -42,13 +42,13 @@ public class BaseTest {
         //Configuration.baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
         /////////
         //todo У тебя работа с браузеро файрфокс, проверяй для гугла потиху
-        WebDriverManager.firefoxdriver().setup();
-        HashMap<String, Object> firefoxPrefs = new HashMap<String, Object>();
-        firefoxPrefs.put("profile.default_content_settings.popups", 0);
-        firefoxPrefs.put("download.prompt_for_download", "false");
-        firefoxPrefs.put("download.default_directory", downloadPath);
+        WebDriverManager.chromedriver().setup();
+        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
+        chromePrefs.put("profile.default_content_settings.popups", 0);
+        chromePrefs.put("download.prompt_for_download", "false");
+        chromePrefs.put("download.default_directory", downloadPath);
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", firefoxPrefs);
+        options.setExperimentalOption("prefs", chromePrefs);
         options.addArguments("--window-size=1920,1080");
         ///////
         driver = new FirefoxDriver();

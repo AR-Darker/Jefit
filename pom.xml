@@ -19,7 +19,7 @@
         <lombok.version>1.18.22</lombok.version>
         <testng.version>7.1.0</testng.version>
         <selenium-java.version>3.141.59</selenium-java.version>
-        <webdrivermanager.version>5.0.0</webdrivermanager.version>
+        <webdrivermanager.version>5.5.0</webdrivermanager.version>
         <allure-testng.version>2.13.9</allure-testng.version>
 
     </properties>
