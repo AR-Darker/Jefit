@@ -51,7 +51,7 @@ public class BaseTest {
         options.setExperimentalOption("prefs", chromePrefs);
         options.addArguments("--window-size=1920,1080");
         ///////
-        driver = new FirefoxDriver();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);

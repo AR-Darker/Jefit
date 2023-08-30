@@ -34,7 +34,7 @@ public class LoginTest extends BaseTest {
                 .loginWithsWrongData(login, password)
                 .isPageOpen();
 
-        assertEquals(loginPage.getErrorMessage(), errorMessage, "The text doesn't match");
+        assertEquals(loginPage.getErrorMessage(), errorMessage, "Invalid username/email or password");
     }
 
 
