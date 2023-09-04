@@ -48,7 +48,7 @@ public class LoginPage extends BasePage{
         return driver.findElement(ERROR_MESSAGE).getText();
     }
     @Override
-    @Step("Find element to make sure the page is open")
+    @Step("Find element to make sure that the page is open")
     public boolean isPageOpen() {
         log.info("Find element --> " + LOGIN_BUTTON);
         return isExist(LOGIN_BUTTON);

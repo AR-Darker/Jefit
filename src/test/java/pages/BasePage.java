@@ -11,7 +11,6 @@ import utils.PropertyReader;
 public abstract class BasePage {
     WebDriver driver;
     WebDriverWait wait;
-    //public static final String BASE_URL = "https://www.jefit.com/";
     public static final String BASE_URL = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
     public String email = System.getenv().getOrDefault("JEFIT_EMAIL", PropertyReader.getProperty("jefit.email"));
     public String password = System.getenv().getOrDefault("JEFIT_PASSWORD", PropertyReader.getProperty("jefit.password"));
