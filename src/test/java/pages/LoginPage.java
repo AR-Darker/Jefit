@@ -7,14 +7,13 @@ import lombok.extern.log4j.Log4j2;
 import net.bytebuddy.asm.Advice;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import utils.PropertyReader;
 
 @Log4j2
 public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-    public String email = "ofohato@mailto.plus";
-    public String password = "Ivan2003@";
     public static final By ERROR_MESSAGE = By.id("invalidpassworderrormessage");
     public static final By LOGIN_BUTTON = By.xpath("//input[@value = 'Login']");
 
