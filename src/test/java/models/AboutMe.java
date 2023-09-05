@@ -12,19 +12,20 @@ import lombok.NoArgsConstructor;
 @Builder
 public class AboutMe {
 
-    String t1;
-    String t2;
-    String t3;
-    String t4;
-    String t5;
-    String t6;
-    String t7;
-    String t8;
-    String t9;
-    String t10;
-    String t11;
-    String t12;
-    String t13;
-    String t14;
-    String t15;
+    String location;
+    String occupation;
+    String interest;
+    String whyDoYouWorkout;
+    String howDidYourStart;
+    String whatMotivatesYou;
+    String mainGoal;
+    String longTermGoals;
+    String shortTermGoals;
+    String music;
+    String Food;
+    String supplements;
+    String exercises;
+    String magazines;
+    String movies;
+
 }

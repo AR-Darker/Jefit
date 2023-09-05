@@ -25,21 +25,21 @@ public class AboutMePage extends BasePage {
 
     @Step("Create aboutMe")
     public AboutMePage create(AboutMe aboutMe) {
-        new Input(driver, "t1").write(aboutMe.getT1());
-        new Input(driver, "t2").write(aboutMe.getT2());
-        new TextArea(driver, "t3").write(aboutMe.getT3());
-        new TextArea(driver, "t4").write(aboutMe.getT4());
-        new TextArea(driver, "t5").write(aboutMe.getT5());
-        new TextArea(driver, "t6").write(aboutMe.getT6());
-        new TextArea(driver, "t7").write(aboutMe.getT7());
-        new TextArea(driver, "t8").write(aboutMe.getT8());
-        new TextArea(driver, "t9").write(aboutMe.getT9());
-        new TextArea(driver, "t10").write(aboutMe.getT10());
-        new TextArea(driver, "t11").write(aboutMe.getT11());
-        new TextArea(driver, "t12").write(aboutMe.getT12());
-        new TextArea(driver, "t13").write(aboutMe.getT13());
-        new TextArea(driver, "t14").write(aboutMe.getT14());
-        new TextArea(driver, "t15").write(aboutMe.getT15());
+        new Input(driver, "t1").write(aboutMe.getLocation());
+        new Input(driver, "t2").write(aboutMe.getOccupation());
+        new TextArea(driver, "t3").write(aboutMe.getInterest());
+        new TextArea(driver, "t4").write(aboutMe.getWhyDoYouWorkout());
+        new TextArea(driver, "t5").write(aboutMe.getHowDidYourStart());
+        new TextArea(driver, "t6").write(aboutMe.getWhatMotivatesYou());
+        new TextArea(driver, "t7").write(aboutMe.getMainGoal());
+        new TextArea(driver, "t8").write(aboutMe.getLongTermGoals());
+        new TextArea(driver, "t9").write(aboutMe.getShortTermGoals());
+        new TextArea(driver, "t10").write(aboutMe.getMusic());
+        new TextArea(driver, "t11").write(aboutMe.getFood());
+        new TextArea(driver, "t12").write(aboutMe.getSupplements());
+        new TextArea(driver, "t13").write(aboutMe.getExercises());
+        new TextArea(driver, "t14").write(aboutMe.getMagazines());
+        new TextArea(driver, "t15").write(aboutMe.getMovies());
         log.info("Create " + aboutMe);
         return clickSave();
     }
