@@ -12,10 +12,7 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import pages.AboutMePage;
-import pages.LoginPage;
-import pages.ProfileHomePage;
-import pages.UserPage;
+import pages.*;
 import utils.PropertyReader;
 
 import java.io.File;
@@ -37,11 +34,11 @@ public class BaseTest {
     public ProfileHomePage profileHomePage;
     public AboutMePage aboutMePage;
     public UserPage userPage;
+    public RoutinesPage routinesPage;
     @BeforeMethod
     public void setUp(ITestContext context){
         //Configuration.baseUrl = System.getenv().getOrDefault("JEFIT_URL", PropertyReader.getProperty("jefit.url"));
         /////////
-        //todo У тебя работа с браузеро файрфокс, проверяй для гугла потиху
         WebDriverManager.chromedriver().setup();
         HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
         chromePrefs.put("profile.default_content_settings.popups", 0);
@@ -61,6 +58,7 @@ public class BaseTest {
         profileHomePage = new ProfileHomePage(driver);
         aboutMePage = new AboutMePage(driver);
         userPage = new UserPage(driver);
+        routinesPage = new RoutinesPage(driver);
 }
     public void downloader(String fileLocator, String nameDownloadedFile) throws IOException, InterruptedException {
         WebElement ourFile = driver.findElement(By.xpath(fileLocator));
