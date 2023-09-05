@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 public class Button {
     WebDriver driver;
     String value;
-
     String buttonLocator = "//input[@value = '%s']";
 
     public Button(WebDriver driver, String value) {
