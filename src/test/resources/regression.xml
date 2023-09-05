@@ -4,8 +4,8 @@
     <test name="Stream 1">
         <classes>
             <class name="tests.LoginTest"/>
-            <class name="tests."/>
-            <class name="tests."/>
+            <class name="tests.AboutMeTest"/>
+            <class name="tests.ProfileHomeTest"/>
 
         </classes>
     </test> <!-- Test -->
