@@ -15,7 +15,7 @@ public class LoginPage extends BasePage{
         super(driver);
     }
     public static final By ERROR_MESSAGE = By.id("invalidpassworderrormessage");
-    public static final By LOGIN_BUTTON = By.xpath("//input[@value = 'Login']");
+    public static final By LOGIN_BUTTON = By.xpath("//input[@value = 'Log in']");
 
         @Step("Open Login page")
         public LoginPage open() {
