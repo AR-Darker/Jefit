@@ -1,6 +1,7 @@
 package pages;
 
 import elements.Button;
+import elements.ButtonAHref;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.By;
@@ -23,8 +24,8 @@ public class UserPage extends BasePage {
 
     @Step("Open User Page")
     public UserPage open() {
-        driver.get(BASE_URL + "https://jefit.com/user/aerus-2");
-        new Button(driver, "More About Me").click();
+        driver.get(BASE_URL + "user/ar-8");
+        new ButtonAHref(driver, "More About Me").click();
         log.info("Open User Page");
         return this;
     }
