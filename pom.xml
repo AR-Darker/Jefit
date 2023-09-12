@@ -21,6 +21,7 @@
         <selenium-java.version>3.141.59</selenium-java.version>
         <webdrivermanager.version>5.5.0</webdrivermanager.version>
         <allure-testng.version>2.13.9</allure-testng.version>
+        <suiteXmlFile>src/test/resources/regression.xml</suiteXmlFile>
 
     </properties>
 
@@ -35,6 +36,10 @@
                 <configuration>
                     <forkCount>3</forkCount>
                     <reuseForks>true</reuseForks>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+
                     <argLine>
                         -javaagent:${settings.localRepository}/org/aspectj/aspectjweaver/${aspectjweaver.version}/aspectjweaver-${aspectjweaver.version}.jar
                         -Xmx256m
