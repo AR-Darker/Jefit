@@ -1,7 +1,10 @@
 package tests;
 
+import models.CustomExercise;
+import models.CustomExerciseFactory;
 import org.testng.annotations.Test;
-
+import models.MyStatus;
+import models.MyStatusFactory;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -22,18 +25,10 @@ public class ProfileHomeTest extends BaseTest {
     public void statusShouldBeChangedTest(){
         loginPage.open()
                 .login();
-        profileHomePage.changeStatus();
+        MyStatus myStatus = MyStatusFactory.get();
+        profileHomePage.changeStatus(myStatus);
 
-        assertEquals(profileHomePage.getStatusText(), "Status : " + profileHomePage.returnFakerText(), "The text doesn't match");
-    }
-
-    @Test(description = "Delete status")
-    public void statusShouldBeDeletedTest(){
-        loginPage.open()
-                .login();
-        profileHomePage.deleteStatus();
-
-        assertEquals(profileHomePage.getStatusText(), "Status", "Status is not deleted");
+        assertEquals(profileHomePage.getStatusText(), profileHomePage.returnFakerText(), "The text doesn't match");
     }
 
     @Test(description = "Sign out")

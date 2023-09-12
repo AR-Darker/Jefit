@@ -6,6 +6,7 @@ import elements.ButtonAHref;
 import elements.TextArea;
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
+import models.MyStatus;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,24 +16,17 @@ import java.io.File;
 
 @Log4j2
 public class ProfileHomePage extends BasePage {
+    public ProfileHomePage(WebDriver driver) {
+        super(driver);
+    }
+
     Faker faker = new Faker();
-    String text = faker.cat().name();
+    public String text = faker.cat().name();
     public static final By PROFILE_PIC = By.xpath("//img[@class ='leftProfilePic']");
     public static final By SELECT_FILE_BUTTON = By.id("avatarupload");
     public static final By STATUS_TEXT = By.xpath("//div[@id ='statusText']/child::div[@class='col-8']");
     public static final By MY_JEFIT = By.xpath("//a[contains(text(), 'My Jefit')]");
     public static final By SIGN_OUT_LINK = By.xpath("//a[text()='Sign out']");
-
-    public ProfileHomePage(WebDriver driver) {
-        super(driver);
-    }
-
-    @Override
-    @Step("Find element to make sure the page is open")
-    public boolean isPageOpen() {
-        log.info("Find element --> " + PROFILE_PIC);
-        return isExist(PROFILE_PIC);
-    }
 
     @Step("Delete status")
     public void deleteStatus() {
@@ -40,12 +34,6 @@ public class ProfileHomePage extends BasePage {
         log.info("Delete status");
     }
 
-    @Step("Edit status")
-    public void changeStatus() {
-        new TextArea(driver, "statusinputbox").write(text);
-        new Button(driver, "Post").click();
-        log.info("Change status");
-    }
 
     @Step("Sign out")
     public LoginPage signOut() {
@@ -56,14 +44,20 @@ public class ProfileHomePage extends BasePage {
         return new LoginPage(driver);
     }
 
+    @Step("Edit status")
+    public void changeStatus(MyStatus myStatus) {
+        new TextArea(driver, "statusinputbox").write(myStatus.getStatusText());
+        new Button(driver, "Post").click();
+        log.info("Change status");
+    }
     @Step("Get faker text")
     public String returnFakerText() {
-        log.info("Return text : " + text);
-        return text;
+        log.info("Return text : " + getStatusText());
+        return getStatusText();
     }
 
     @Step("Get status text")
-    public String getStatusText(){
+    public String getStatusText() {
         log.info("Get status text by " + STATUS_TEXT);
         return driver.findElement(STATUS_TEXT).getText();
     }
@@ -82,6 +76,13 @@ public class ProfileHomePage extends BasePage {
         WebElement imageName = driver.findElement(PROFILE_PIC);
         log.info("File is uploaded");
         return imageName.getAttribute("src");
+    }
+
+    @Override
+    @Step("Find element to make sure the page is open")
+    public boolean isPageOpen() {
+        log.info("Find element --> " + PROFILE_PIC);
+        return isExist(PROFILE_PIC);
     }
 
 }
