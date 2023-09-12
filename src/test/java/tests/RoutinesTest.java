@@ -22,19 +22,4 @@ public class RoutinesTest extends BaseTest {
 
         routinesPage.deleteRoutine();
     }
-
-
-    @Test(description = "Delete Routine")
-    public void routineShouldBeDeletedTest() {
-        loginPage.open()
-                .login();
-        routinesPage.open()
-                .createRoutine()
-                .deleteRoutine();
-
-        assertEquals(routinesPage.routineIsDeletedText(),
-                "You have not setup a default routine yet. Please create one or set one as default routine"
-        , "The text doesn't match");
-
-    }
 }

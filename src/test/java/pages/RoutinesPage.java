@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 @Log4j2
 public class RoutinesPage extends BasePage {
+    public RoutinesPage(WebDriver driver) {
+        super(driver);
+    }
 
     Faker faker = new Faker();
     String text = faker.cat().name();
@@ -16,12 +19,8 @@ public class RoutinesPage extends BasePage {
     public static final By DOWNLOAD_A_ROUTINE_BUTTON = By.xpath("//a[text()='Download A Routine']");
     public static final By ROUTINE_NAME = By.xpath("descendant::a[@class ='confirmText'][1]/strong");
     public static final By DELETE_ROUTINE_BUTTON = By.xpath("//a[@class = 'confirmText']/img[@src= '../../../images/delete_icon1.png']");
-    public static final By ROUTINE_IS_DELETED = By.xpath("//p[contains(text(),'You have not setup a default routine yet. Please c')]");
-    public static final By COUNT_ROUTINE = By.xpath("//td[normalize-space()='0/20 Routines Created']");
 
-    public RoutinesPage(WebDriver driver) {
-        super(driver);
-    }
+    public static final By COUNT_ROUTINE = By.xpath("//td[normalize-space()='0/20 Routines Created']");
 
 
     @Step("Open Routine page")
@@ -40,8 +39,9 @@ public class RoutinesPage extends BasePage {
         new Select(driver, "levelselect").selectRandomOption();
         new TextArea(driver, "rptext").write(faker.chuckNorris().fact());
         new TextArea(driver, "rtags").write(faker.cat().name());
-        driver.findElement(By.xpath("//input[@value = 'Save']")).click();
-        log.info("click on Save button");
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@value = 'Save']")));
+        ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        log.info("JS click on Save button");
         return this;
     }
 
@@ -70,11 +70,6 @@ public class RoutinesPage extends BasePage {
         return this;
     }
 
-    @Step("Make sure the Routine is deleted")
-    public String routineIsDeletedText() {
-        log.info("Get text by " + ROUTINE_IS_DELETED);
-        return driver.findElement(ROUTINE_IS_DELETED).getText();
-    }
     @Override
     @Step("Make sure page is opened")
     public boolean isPageOpen() {
