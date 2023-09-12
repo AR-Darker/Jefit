@@ -37,6 +37,6 @@
 |***Coach***|
 |9.1|Открытие страницы CoachMode|
 |***MyCustomExercises***|
-|10 |Отркыть страницу MyCustomExercises|
+|10 |Открыть страницу MyCustomExercises|
 |10.1 |Создать MyCustomExercise|
-|10.2|Удаление MyCustomExercise|
+|10.2|Удалить MyCustomExercise|
