@@ -9,20 +9,21 @@
 
         </classes>
     </test> <!-- Test -->
-
     <test name="Stream 2">
         <classes>
-            <class name="tests."/>
-            <class name="tests."/>
-            <class name="tests."/>
+            <class name="tests.FriendsTest"/>
+            <class name="tests.MyReportsTest"/>
+            <class name="tests.RoutinesTest"/>
+
+
         </classes>
     </test> <!-- Test -->
-
     <test name="Stream 3">
         <classes>
-            <class name="tests."/>
-            <class name="tests."/>
-            <class name="tests."/>
+            <class name="tests.CoachModeTest"/>
+            <class name="tests.MyCustomExercisesTest"/>
+            <class name="tests.LogWorkoutTest"/>
+
         </classes>
     </test> <!-- Test -->
 </suite>
