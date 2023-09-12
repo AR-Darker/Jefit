@@ -26,7 +26,6 @@ public class Select {
         int size = options.size();
         int randomNumber = ThreadLocalRandom.current().nextInt(0, size);
         select.selectByIndex(randomNumber);
-        select.getFirstSelectedOption();
         log.info("Select random option in select with name " + name);
     }
 }
