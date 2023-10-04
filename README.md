@@ -1,12 +1,23 @@
-# Jefit
+## Jefit graduation project
 
-***To start tests copy following credentials to config.propertiesr*** 
 
-jefit.url = https://www.jefit.com/
 
-jefit.email = txdquqk@mailto.plus
+### Used technologeis:
+* Java   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original-wordmark.svg" width="50" height="50"/>
+* Selenium  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/selenium/selenium-original.svg" width="40" height="40"/>
+* Maven
+* TestNG
+* Allure Reporting
+* Lombok
+* TestListeners
 
-jefit.password = Ivan2003@
+
+### Following patterns were used:
+* Page Object
+* Fluent/Chain of invocation
+* Loadable Page
+
+### CheckList
 
 |***Profile (My Jefit)*** | What to do |
 |  :---   | ----------- |
@@ -46,3 +57,11 @@ jefit.password = Ivan2003@
 |10 |Открыть страницу MyCustomExercises|
 |10.1 |Создать MyCustomExercise|
 |10.2|Удалить MyCustomExercise|
+
+### **To run tests copy following credentials to config.properties**
+
+jefit.url = https://www.jefit.com/
+
+jefit.email = txdquqk@mailto.plus
+
+jefit.password = Ivan2003@
