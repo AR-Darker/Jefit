@@ -17,7 +17,7 @@ public class Input {
 
     public void write(String text) {
         driver.findElement(By.xpath(String.format(inputLocator, this.name))).sendKeys(text);
-        log.info("Write " + text + " into Input with name " + name);
+        log.info("Write " + " into Input with name " + name);
     }
 
     public void clear() {

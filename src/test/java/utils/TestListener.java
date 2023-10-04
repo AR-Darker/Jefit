@@ -10,7 +10,7 @@ import utils.AllureUtils;
 public class TestListener implements ITestListener {
     @Override
     public void onTestStart(ITestResult result) {
-        log.info(">>>>>>>>>>>>>>>>>>>TEST START: " +result.getName() + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" );
+        log.info("TEST START: " +result.getName() + "" );
     }
 
     @Override
@@ -22,7 +22,7 @@ public class TestListener implements ITestListener {
     public void onTestFailure(ITestResult result) {
         WebDriver driver = (WebDriver)result.getTestContext().getAttribute("driver");
         AllureUtils.takeScreenShot(driver);
-        log.info(">>>>>>>>>>>>>>>>>>>TEST FAIL: " +result.getName() + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<" );
+        log.info("TEST FAIL: " +result.getName() + "" );
     }
 
     @Override

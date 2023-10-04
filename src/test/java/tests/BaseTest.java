@@ -61,7 +61,7 @@ public class BaseTest {
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
         context.setAttribute("driver", driver);
 
-//todo (не забудь инициализировать страницы)
+
         loginPage = new LoginPage(driver);
         profileHomePage = new ProfileHomePage(driver);
         aboutMePage = new AboutMePage(driver);
@@ -73,37 +73,7 @@ public class BaseTest {
         myCustomExercisesPage = new MyCustomExercisesPage(driver);
         myReportsPage = new MyReportsPage(driver);
 }
-    public void downloader(String fileLocator, String nameDownloadedFile) throws IOException, InterruptedException {
-        WebElement ourFile = driver.findElement(By.xpath(fileLocator));
-        FileUtils.cleanDirectory(new File(downloadPath));
-        File folder = new File(downloadPath);
-        File[] listOfFiles = folder.listFiles();
 
-        ourFile.click();
-
-        while (wait != 0 && fileIsNotReady){
-            listOfFiles =  folder.listFiles();
-            Thread.sleep(100);
-            wait-=100;
-            if ((listOfFiles.length !=0 && listOfFiles[0].getName().equals(nameDownloadedFile))){
-                fileIsNotReady = false;
-            }
-        }
-        assertEquals(listOfFiles[0].getName(), nameDownloadedFile);
-
-
-    }
-    public void deleteAllFilesFromDirectory() {
-        File file = new File(downloadPath);
-        String[] currentFiles;
-        if (file.isDirectory()) {
-            currentFiles = file.list();
-            for (String currentFile : currentFiles) {
-                File myFile = new File(file, currentFile);
-                myFile.delete();
-            }
-        }
-    }
 
     @AfterMethod(alwaysRun = true, description = "Close browser")
     public void tearDown() {
