@@ -1,5 +1,6 @@
 ## Jefit graduation project
 
+Automatization testing of [JEFIT](https://www.jefit.com/) web-application. Platform for creating, editing and tracking workout plans.
 
 
 ### Used technologeis:
