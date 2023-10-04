@@ -1,7 +1,13 @@
 # Jefit
 
-| ***Enabling account*** |
-|1. Apply metric settings|
+***To start tests copy following credentials to config.propertiesr*** 
+
+jefit.url = https://www.jefit.com/
+
+jefit.email = txdquqk@mailto.plus
+
+jefit.password = Ivan2003@
+
 |***Profile (My Jefit)*** | What to do |
 |  :---   | ----------- |
 |1| Открытие профиля|
