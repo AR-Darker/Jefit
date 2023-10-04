@@ -30,9 +30,9 @@ import static org.testng.Assert.assertEquals;
 @Listeners(TestListener.class)
 public class BaseTest {
     protected WebDriver driver;
-    public static String downloadPath = System.getProperty("user.dir") + "\\src\\test\\resources\\filesForUploading";
+
     int wait = 15000;
-    boolean fileIsNotReady = true;
+
     protected LoginPage loginPage;
     protected ProfileHomePage profileHomePage;
     protected AboutMePage aboutMePage;
@@ -47,12 +47,9 @@ public class BaseTest {
     public void setUp(ITestContext context){
 
         WebDriverManager.chromedriver().setup();
-        HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
-        chromePrefs.put("profile.default_content_settings.popups", 0);
-        chromePrefs.put("download.prompt_for_download", "false");
-        chromePrefs.put("download.default_directory", downloadPath);
+
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("prefs", chromePrefs);
+
         options.addArguments("--window-size=1920,1080");
         options.addArguments("--headless");
 
