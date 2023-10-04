@@ -1,4 +1,11 @@
 ## Jefit graduation project
+##### **To run tests copy following credentials to config.properties**
+
+jefit.url = https://www.jefit.com/
+
+jefit.email = txdquqk@mailto.plus
+
+jefit.password = Ivan2003@
 
 Automatization testing of [JEFIT](https://www.jefit.com/) web-application. Platform for creating, editing and tracking workout plans.
 
@@ -61,10 +68,4 @@ Automatization testing of [JEFIT](https://www.jefit.com/) web-application. Platf
 |10.1 |Создать MyCustomExercise|
 |10.2|Удалить MyCustomExercise|
 
-### **To run tests copy following credentials to config.properties**
 
-jefit.url = https://www.jefit.com/
-
-jefit.email = txdquqk@mailto.plus
-
-jefit.password = Ivan2003@
