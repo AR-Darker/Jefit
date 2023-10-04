@@ -16,6 +16,8 @@
 * Page Object
 * Fluent/Chain of invocation
 * Loadable Page
+* PageElement
+* Factory/Page Factory
 
 ### CheckList
 
