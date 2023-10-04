@@ -6,6 +6,7 @@ jefit.url = https://www.jefit.com/
 jefit.email = txdquqk@mailto.plus
 
 jefit.password = Ivan2003@
+#
 
 Automatization testing of [JEFIT](https://www.jefit.com/) web-application. Platform for creating, editing and tracking workout plans.
 
